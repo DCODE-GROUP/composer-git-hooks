@@ -1,5 +1,5 @@
 {
-    "name": "dcode-dave/composer-git-hooks",
+    "name": "dcode-group/composer-git-hooks",
     "description": "Easily manage git hooks in your composer config",
     "type": "library",
     "minimum-stability": "stable",
@@ -44,8 +44,8 @@
         "test": "vendor/bin/phpunit",
         "post-install-cmd": "./cghooks add --ignore-lock",
         "post-update-cmd": "./cghooks update",
-        "check-style": "php-cs-fixer fix --using-cache=no --diff --dry-run .",
-        "fix-style": "php-cs-fixer fix --using-cache=no ."
+        "check-style": "./vendor/bin/pint --test",
+        "fix-style": "./vendor/bin/pint"
     },
     "scripts-descriptions": {
         "test": "Run all tests.",
