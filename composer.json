@@ -44,8 +44,8 @@
         "test": "vendor/bin/phpunit",
         "post-install-cmd": "./cghooks add --ignore-lock",
         "post-update-cmd": "./cghooks update",
-        "check-style": "./vendor/bin/pint --test",
-        "fix-style": "./vendor/bin/pint"
+        "check-style": "./vendor/bin/php-cs-fixer fix --dry-run --diff",
+        "fix-style": "./vendor/bin/php-cs-fixer fix"
     },
     "scripts-descriptions": {
         "test": "Run all tests.",
