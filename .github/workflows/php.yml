@@ -38,7 +38,7 @@ jobs:
         php-version: ${{ matrix.php }}
 
     - name: Install dependencies for Symfony ${{ matrix.symfony }}
-      run: composer update -W --prefer-dist --no-progress --no-interaction "symfony/console:${{ matrix.symfony }}" "friendsofphp/php-cs-fixer:^3.0"
+      run: composer update -W --prefer-dist --no-progress --no-interaction --with "symfony/console:${{ matrix.symfony }}" --with "friendsofphp/php-cs-fixer:^3.0"
 
     - name: Check style
       run: composer run-script check-style
