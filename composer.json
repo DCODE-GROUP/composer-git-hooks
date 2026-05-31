@@ -11,8 +11,8 @@
     ],
     "authors": [
         {
-            "name": "Ezinwa Okpoechi",
-            "email": "brainmaestro@outlook.com"
+            "name": "DCODE Group",
+            "email": "forge@dcodegroup.com"
         }
     ],
     "require": {
@@ -26,7 +26,7 @@
     },
     "autoload": {
         "psr-4": {
-            "BrainMaestro\\GitHooks\\": "src/"
+            "Dcodegroup\\GitHooks\\": "src/"
         },
         "files": [
             "src/helpers.php"
@@ -34,7 +34,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "BrainMaestro\\GitHooks\\Tests\\": "tests/"
+            "Dcodegroup\\GitHooks\\Tests\\": "tests/"
         }
     },
     "bin": [
@@ -44,8 +44,8 @@
         "test": "vendor/bin/phpunit",
         "post-install-cmd": "./cghooks add --ignore-lock",
         "post-update-cmd": "./cghooks update",
-        "check-style": "./vendor/bin/pint --test",
-        "fix-style": "./vendor/bin/pint"
+        "check-style": "./vendor/bin/php-cs-fixer fix --dry-run --diff",
+        "fix-style": "./vendor/bin/php-cs-fixer fix"
     },
     "scripts-descriptions": {
         "test": "Run all tests.",

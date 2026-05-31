@@ -1,13 +1,13 @@
 <?php
 
-namespace Dcodegroup\GitHooks\Commands;
+namespace Dcodegroup\GitHooks\Commands\Legacy;
 
 use Dcodegroup\GitHooks\Commands\Abstract\AbstractListCommand;
 use Symfony\Component\Console\Input\InputOption;
 
 class ListCommand extends AbstractListCommand
 {
-    protected function configure(): void
+    protected function configure()
     {
         $this
             ->setName('list-hooks')

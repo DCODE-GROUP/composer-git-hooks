@@ -1,9 +1,9 @@
 <?php
 
-namespace BrainMaestro\GitHooks\Tests;
+namespace Dcodegroup\GitHooks\Tests;
 
-use BrainMaestro\GitHooks\Commands\RemoveCommand;
-use BrainMaestro\GitHooks\Hook;
+use Dcodegroup\GitHooks\Commands\RemoveCommand;
+use Dcodegroup\GitHooks\Hook;
 use PHPUnit\Framework\Attributes\Group;
 use Symfony\Component\Console\Tester\CommandTester;
 use Symfony\Component\Console\Output\OutputInterface;

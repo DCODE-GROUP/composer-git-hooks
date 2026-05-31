@@ -1,6 +1,6 @@
 <?php
 
-namespace BrainMaestro\GitHooks\Tests;
+namespace Dcodegroup\GitHooks\Tests;
 
 use PHPUnit\Framework\TestCase as PHPUnitTestCase;
 use PHPUnit\Framework\Attributes\Test;

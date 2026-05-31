@@ -1,12 +1,12 @@
 <?php
 
-namespace Dcodegroup\GitHooks\Commands;
+namespace Dcodegroup\GitHooks\Commands\Legacy;
 
 use Dcodegroup\GitHooks\Commands\Abstract\AbstractHookCommand;
 
 class HookCommand extends AbstractHookCommand
 {
-    protected function configure(): void
+    protected function configure()
     {
         $this
             ->setName($this->hook)

@@ -1,13 +1,13 @@
 <?php
 
-namespace BrainMaestro\GitHooks\Commands;
+namespace Dcodegroup\GitHooks\Commands\Abstract;
 
-use BrainMaestro\GitHooks\Hook;
+use Dcodegroup\GitHooks\Hook;
 use Symfony\Component\Console\Command\Command as SymfonyCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-abstract class Command extends SymfonyCommand
+abstract class AbstractCommand extends SymfonyCommand
 {
     private $output;
 

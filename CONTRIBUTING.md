@@ -2,7 +2,7 @@
 
 Contributions are **welcome**!
 
-We accept contributions via Pull Requests on [Github](https://github.com/BrainMaestro/composer-git-hooks/pulls).
+We accept contributions via Pull Requests on [Github](https://github.com/Dcodegroup/composer-git-hooks/pulls).
 
 ## Pull Requests
 

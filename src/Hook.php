@@ -1,6 +1,6 @@
 <?php
 
-namespace BrainMaestro\GitHooks;
+namespace Dcodegroup\GitHooks;
 
 use Exception;
 
