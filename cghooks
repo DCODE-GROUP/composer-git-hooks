@@ -1,5 +1,18 @@
 #!/usr/bin/env php
 <?php
+use Dcodegroup\GitHooks\Hook;
+use Dcodegroup\GitHooks\Commands\AddCommand;
+use Dcodegroup\GitHooks\Commands\UpdateCommand;
+use Dcodegroup\GitHooks\Commands\RemoveCommand;
+use Dcodegroup\GitHooks\Commands\ListCommand;
+use Dcodegroup\GitHooks\Commands\HookCommand;
+use Dcodegroup\GitHooks\Commands\Legacy\AddCommand as LegacyAddCommand;
+use Dcodegroup\GitHooks\Commands\Legacy\UpdateCommand as LegacyUpdateCommand;
+use Dcodegroup\GitHooks\Commands\Legacy\RemoveCommand as LegacyRemoveCommand;
+use Dcodegroup\GitHooks\Commands\Legacy\ListCommand as LegacyListCommand;
+use Symfony\Component\Console\Application;
+
+
 $dir = getcwd();
 if (is_file($autoload = __DIR__ . '/vendor/autoload.php')) {
     require_once $autoload;
@@ -14,23 +27,32 @@ if (is_file($autoload = __DIR__ . '/vendor/autoload.php')) {
     exit(1);
 }
 
-use BrainMaestro\GitHooks\Hook;
-use BrainMaestro\GitHooks\Commands\AddCommand;
-use BrainMaestro\GitHooks\Commands\UpdateCommand;
-use BrainMaestro\GitHooks\Commands\RemoveCommand;
-use BrainMaestro\GitHooks\Commands\ListCommand;
-use BrainMaestro\GitHooks\Commands\HookCommand;
-use Symfony\Component\Console\Application;
-
 $application = new Application('Composer Git Hooks', '3.0.0');
 
-$application->add(new AddCommand());
-$application->add(new UpdateCommand());
-$application->add(new RemoveCommand());
-$application->add(new ListCommand());
+if(method_exists($application, 'addCommand')) { // New style Symfony Console Application
+    $addMethod = 'addCommand';
+    $commands = [
+        new LegacyAddCommand(),
+        new LegacyUpdateCommand(),
+        new LegacyRemoveCommand(),
+        new LegacyListCommand(),        
+    ];
+} else { // Old style Symfony Console Application
+    $addMethod = 'add';
+    $commands = [
+        new AddCommand(),
+        new UpdateCommand(),
+        new RemoveCommand(),
+        new ListCommand(),
+    ];
+}
+
+foreach ($commands as $command) {
+    $application->{$addMethod}($command);
+}
 
 foreach (Hook::getValidHooks($dir) as $hook => $script) {
-    $application->add(new HookCommand($hook, $script, $dir));
+    $application->{$addMethod}(new HookCommand($hook, $script, $dir));
 }
 
 $application->run();

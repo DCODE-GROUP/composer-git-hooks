@@ -1,6 +1,6 @@
 <?php
 
-namespace Dcodegroup\GitHooks\Commands;
+namespace Dcodegroup\GitHooks\Commands\Legacy;
 
 use Dcodegroup\GitHooks\Commands\Abstract\AbstractRemoveCommand;
 use Symfony\Component\Console\Input\InputInterface;
@@ -9,7 +9,7 @@ use Symfony\Component\Console\Input\InputOption;
 
 class RemoveCommand extends AbstractRemoveCommand
 {
-    protected function configure(): void
+    protected function configure()
     {
         $this
             ->setName('remove')

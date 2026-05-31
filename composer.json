@@ -12,7 +12,7 @@
     "authors": [
         {
             "name": "Ezinwa Okpoechi",
-            "email": "brainmaestro@outlook.com"
+            "email": "Dcodegroup@outlook.com"
         }
     ],
     "require": {
@@ -26,7 +26,7 @@
     },
     "autoload": {
         "psr-4": {
-            "BrainMaestro\\GitHooks\\": "src/"
+            "Dcodegroup\\GitHooks\\": "src/"
         },
         "files": [
             "src/helpers.php"
@@ -34,7 +34,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "BrainMaestro\\GitHooks\\Tests\\": "tests/"
+            "Dcodegroup\\GitHooks\\Tests\\": "tests/"
         }
     },
     "bin": [

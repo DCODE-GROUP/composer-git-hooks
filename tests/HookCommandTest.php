@@ -1,8 +1,8 @@
 <?php
 
-namespace BrainMaestro\GitHooks\Tests;
+namespace Dcodegroup\GitHooks\Tests;
 
-use BrainMaestro\GitHooks\Commands\HookCommand;
+use Dcodegroup\GitHooks\Commands\HookCommand;
 use Symfony\Component\Console\Tester\CommandTester;
 use PHPUnit\Framework\Attributes\Test;
 

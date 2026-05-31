@@ -1,6 +1,6 @@
 <?php
 
-namespace Dcodegroup\GitHooks\Commands;
+namespace Dcodegroup\GitHooks\Commands\Legacy;
 
 use Dcodegroup\GitHooks\Commands\Abstract\AbstractUpdateCommand;
 use Symfony\Component\Console\Input\InputInterface;
@@ -8,7 +8,7 @@ use Symfony\Component\Console\Input\InputOption;
 
 class UpdateCommand extends AbstractUpdateCommand
 {
-    protected function configure(): void
+    protected function configure()
     {
         $this
             ->setName('update')

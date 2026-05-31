@@ -1,13 +1,13 @@
 <?php
 
-namespace Dcodegroup\GitHooks\Commands;
+namespace Dcodegroup\GitHooks\Commands\Legacy;
 
 use Dcodegroup\GitHooks\Commands\Abstract\AbstractAddCommand;
 use Symfony\Component\Console\Input\InputOption;
 
 class AddCommand extends AbstractAddCommand
 {
-    protected function configure(): void
+    protected function configure()
     {
         $this
             ->setName('add')
