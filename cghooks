@@ -27,23 +27,23 @@ if (is_file($autoload = __DIR__ . '/vendor/autoload.php')) {
     exit(1);
 }
 
-$application = new Application('Composer Git Hooks', '3.0.0');
+$application = new Application('Composer Git Hooks', '4.0.0');
 
 if(method_exists($application, 'addCommand')) { // New style Symfony Console Application
     $addMethod = 'addCommand';
-    $commands = [
-        new LegacyAddCommand(),
-        new LegacyUpdateCommand(),
-        new LegacyRemoveCommand(),
-        new LegacyListCommand(),        
-    ];
-} else { // Old style Symfony Console Application
-    $addMethod = 'add';
     $commands = [
         new AddCommand(),
         new UpdateCommand(),
         new RemoveCommand(),
         new ListCommand(),
+    ];
+} else { // Old style Symfony Console Application
+    $addMethod = 'add';
+    $commands = [
+        new LegacyAddCommand(),
+        new LegacyUpdateCommand(),
+        new LegacyRemoveCommand(),
+        new LegacyListCommand(),
     ];
 }
 
